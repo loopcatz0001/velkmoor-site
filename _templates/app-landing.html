@@ -1,0 +1,132 @@
+<!doctype html>
+<!--
+  TEMPLATE — app landing page (English). See ADDING_AN_APP.md.
+  1. Copy to /<slug>/index.html (and a Japanese copy to /ja/<slug>/index.html:
+     set lang="ja", swap -en images for -ja, use privacy-ja.html / support-ja.html,
+     and point the language links the other way).
+  2. Replace every {{...}}. Search for "{{" before you commit — none may remain.
+  3. Add a .t-<slug> palette to assets/site.css (copy .t-pillwindow and change colours).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>{{APP NAME}} — {{KICKER}}</title>
+<meta name="description" content="{{ONE-SENTENCE VALUE, from PRODUCT_PAGE_FINAL.md promotional text}}">
+<meta name="theme-color" content="{{THEME COLOR}}">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/{{SLUG}}/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://velkmoor.com/{{SLUG}}/">
+<link rel="alternate" hreflang="ja" href="https://velkmoor.com/ja/{{SLUG}}/">
+<link rel="canonical" href="https://velkmoor.com/{{SLUG}}/">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="t-{{SLUG}}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="container">
+    <a class="logo" href="/" aria-label="Velkmoor home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0f6e66"/><path d="M9.5 10.5 16 22l6.5-11.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Velkmoor</span></a>
+    <nav class="nav" aria-label="{{APP NAME}}">
+      <a class="hide-s" href="#features">Features</a>
+      <a class="hide-s" href="#faq">FAQ</a>
+      <a href="/{{SLUG}}/support.html">Support</a>
+      <a class="lang" href="/ja/{{SLUG}}/" lang="ja" hreflang="ja">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="app-hero">
+  <div class="container">
+    <div class="copy">
+      <picture><source srcset="/assets/img/{{SLUG}}/icon-512.webp" type="image/webp"><img class="app-icon" src="/assets/img/{{SLUG}}/icon-512.png" alt="{{APP NAME}} app icon" width="96" height="96"></picture>
+      <h1>{{APP NAME}}</h1>
+      <p class="kicker">{{KICKER}}</p>
+      <p class="lede">{{2–3 SENTENCES, from the first lines of the App Store description}}</p>
+      <div class="actions">
+        <!-- APP_STORE_LINK: when live, replace this <span> with the OFFICIAL Apple badge artwork
+             (Apple Marketing Tools) wrapped in <a href="https://apps.apple.com/app/idXXXXXXXXXX">…</a>. Do not restyle the badge. -->
+        <span class="badge" data-app-store="{{SLUG}}">Coming soon on the App Store</span>
+        <span class="meta">{{iPhone · English · Free to start}}</span>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="phone"><picture><source srcset="/assets/img/{{SLUG}}/{{HERO SHOT}}-en.webp" type="image/webp"><img src="/assets/img/{{SLUG}}/{{HERO SHOT}}-en.jpg" alt="{{WHAT THE SCREEN SHOWS}}" width="720" height="1473"></picture></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features" aria-label="Features">
+  <div class="container">
+    <div class="features">
+      <!-- FEATURE (repeat 3–4 times; even ones flip sides automatically) -->
+      <article class="feature">
+        <div class="feature-shot"><div class="phone"><picture><source srcset="/assets/img/{{SLUG}}/{{SHOT}}-en.webp" type="image/webp"><img src="/assets/img/{{SLUG}}/{{SHOT}}-en.jpg" alt="{{WHAT THE SCREEN SHOWS}}" width="720" height="1473" loading="lazy"></picture></div></div>
+        <div>
+          <p class="num">{{SMALL LABEL}}</p>
+          <h2>{{FEATURE HEADLINE}}</h2>
+          <p>{{ONE OR TWO SENTENCES}}</p>
+          <ul class="ticks"><li>{{DETAIL}}</li><li>{{DETAIL}}</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section pt0" aria-labelledby="privacy-h">
+  <div class="container">
+    <div class="promise">
+      <h2 class="h2" id="privacy-h">{{PRIVACY HEADLINE, e.g. No account.<br>It stays on your iPhone.}}</h2>
+      <div class="grid"><div><b>{{POINT}}</b><p>{{TEXT}}</p></div><div><b>{{POINT}}</b><p>{{TEXT}}</p></div><div><b>{{POINT}}</b><p>{{TEXT}}</p></div></div>
+      <a class="link" href="/{{SLUG}}/privacy.html">Read the privacy policy →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section pt0" aria-labelledby="price-h">
+  <div class="container">
+    <div class="section-head"><h2 class="h2" id="price-h">{{PRICING HEADLINE}}</h2></div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <p class="sub">{{WHAT FREE MEANS}}</p>
+        <ul><li>{{FREE FEATURE}}</li></ul>
+      </div>
+      <div class="plan">
+        <h3>{{APP NAME}} Plus</h3>
+        <p class="sub">Optional subscription. The yearly plan starts with a free trial.</p>
+        <ul><li>{{PLUS FEATURE}}</li></ul>
+      </div>
+    </div>
+    <p class="fine">Prices are shown in the app before you subscribe. Manage or cancel anytime in Settings › your name › Subscriptions.</p>
+  </div>
+</section>
+
+<section class="section pt0" id="faq" aria-labelledby="faq-h">
+  <div class="container narrow">
+    <h2 class="h2 mb" id="faq-h">Questions</h2>
+    <div class="faq">
+      <!-- FAQ item (repeat 4–6) -->
+      <details><summary>{{QUESTION}}</summary><div class="answer"><p>{{ANSWER}}</p></div></details>
+    </div>
+    <div class="note"><p>{{DISCLAIMER, e.g. "is a timer and a log. It does not provide medical advice." Remove if not needed.}}</p></div>
+    <div class="help-links">
+      <a class="btn primary" href="/{{SLUG}}/support.html">Get support</a>
+      <a class="btn" href="/{{SLUG}}/privacy.html">Privacy policy</a>
+      <a class="btn" href="mailto:info.velkmoor@gmail.com">info.velkmoor@gmail.com</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="container">
+    <div class="legal">
+      <span>{{APP NAME}} is made by <a href="/">Velkmoor</a>, an independent app studio.</span>
+      <span><a href="/#apps">All apps</a> · <a href="/{{SLUG}}/support.html">Support</a> · <a href="/{{SLUG}}/privacy.html">Privacy policy</a> · <a href="/ja/{{SLUG}}/" lang="ja" hreflang="ja">日本語</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

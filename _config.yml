@@ -1,0 +1,4 @@
+# GitHub Pages (Jekyll) settings. Folders starting with "_" (templates, tools) are never published.
+exclude:
+  - ADDING_AN_APP.md
+  - PUBLISH_OPTIONS.md
