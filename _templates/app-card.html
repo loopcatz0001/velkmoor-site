@@ -1,23 +1,25 @@
 <!--
-  TEMPLATE — app card for the home pages. See ADDING_AN_APP.md.
-  Paste inside <div class="cards"> in /index.html (English) and /ja/index.html (Japanese).
-  Japanese copy: link /ja/{{SLUG}}/, badge text "App Store で近日公開", "詳しく見る", -ja screenshot.
-  Also add the app to the .hero-apps chip list and the footer "Velkmoor" list on both pages.
+  TEMPLATE — app entry for the home pages (assets/home.css). See ADDING_AN_APP.md §3.
+  Paste after the last <article class="entry"> in /index.html (EN) and /ja/index.html (JA).
+  Every 2nd entry gets class="entry flip" (screens on the left on desktop).
+  JA: paths start with ../, status 準備中 / 審査中, -ja screenshots when the app has them.
+  Copy: ONE plain sentence (or two short ones) saying what the app does for the user. No taglines, no policy talk,
+  no hype, no medical claims, no invented numbers. Then 1 or 2 real screens with a 2-4 word caption.
+  Also add a dated line to the Notes list and a privacy link in the footer.
 -->
-      <!-- APP CARD: {{SLUG}} -->
-      <article class="card t-{{SLUG}}">
-        <div class="card-body">
-          <picture><source srcset="/assets/img/{{SLUG}}/icon-512.webp" type="image/webp"><img class="app-icon" src="/assets/img/{{SLUG}}/icon-512.png" alt="" width="72" height="72"></picture>
-          <h3>{{APP NAME}}</h3>
-          <p class="kicker">{{KICKER}}</p>
-          <p class="value">{{ONE-SENTENCE VALUE}}</p>
-          <div class="actions">
-            <!-- APP_STORE_LINK: when live, replace the <span> with the OFFICIAL Apple App Store badge artwork (Apple Marketing Tools) wrapped in <a href="https://apps.apple.com/app/idXXXXXXXXXX">. Do not restyle the badge. -->
-            <span class="badge" data-app-store="{{SLUG}}">Coming soon on the App Store</span>
-            <a class="more" href="/{{SLUG}}/">Learn more<span class="visually-hidden"> about {{APP NAME}}</span></a>
-          </div>
-        </div>
-        <div class="card-shot" aria-hidden="true">
-          <div class="phone"><picture><source srcset="/assets/img/{{SLUG}}/{{SHOT}}-en.webp" type="image/webp"><img src="/assets/img/{{SLUG}}/{{SHOT}}-en.jpg" alt="" width="720" height="1473" loading="lazy"></picture></div>
-        </div>
-      </article>
+    <!-- APP ENTRY: {{SLUG}} -->
+    <article class="entry">
+      <div class="text">
+        <div class="name"><img src="assets/img/{{SLUG}}/icon-128.png" alt="" width="40" height="40"><h2>{{APP NAME}}</h2></div>
+        <p class="does">{{WHAT IT DOES, ONE PLAIN SENTENCE}}</p>
+        <!-- APP_STORE_LINK: when live, replace the status <span> with the OFFICIAL Apple App Store badge artwork (Apple Marketing Tools) wrapped in <a href="https://apps.apple.com/app/idXXXXXXXXXX">. Do not restyle the badge. -->
+        <p class="facts"><span class="status" data-app-store="{{SLUG}}">Coming soon</span><br>{{DEVICES. LANGUAGES.}}</p>
+        <a class="more" href="{{SLUG}}/">{{APP NAME}} page</a>
+      </div>
+      <div class="shots">
+        <figure>
+          <div class="shot"><picture><source srcset="assets/img/{{SLUG}}/{{SHOT}}-en.webp" type="image/webp"><img src="assets/img/{{SLUG}}/{{SHOT}}-en.jpg" alt="{{DESCRIBE THE SCREEN}}" width="720" height="1473" loading="lazy"></picture></div>
+          <figcaption>{{CAPTION}}</figcaption>
+        </figure>
+      </div>
+    </article>

@@ -32,9 +32,14 @@ python3 _tools/export_app_images.py newapp <path>/AppIcon-1024.png \
 
 ## 3. Home pages (EN + JA)
 
+The home pages use `assets/home.css` (editorial layout, system fonts). Landing pages keep `assets/site.css`.
 In both `index.html` and `ja/index.html`:
-- Paste `_templates/app-card.html` inside `<div class="cards">` (JA wording is noted in the template).
-- Add a chip to the `.hero-apps` list and a line to the footer "Velkmoor" list (with the privacy link).
+- Paste `_templates/app-card.html` after the last `<article class="entry">` (JA notes are in the template).
+- Add a dated line at the top of the Notes list (`#notes`): what shipped, version, what changed.
+- Add the privacy link to the footer list.
+- Never add reviews, ratings, user counts, press logos or invented people.
+
+Older Japanese apps live on `older/` and `ja/older/` (their privacy URLs never change).
 
 ## 4. Privacy and support
 
@@ -45,7 +50,7 @@ In both `index.html` and `ja/index.html`:
 ## 5. When the app goes live
 
 Search the site for `APP_STORE_LINK` and `data-app-store="newapp"` (home EN + JA, landing EN + JA).
-Replace each `<span class="badge" …>Coming soon…</span>` with Apple's **official** "Download on the
+Replace each `<span class="badge" …>` / `<span class="status" …>` placeholder with Apple's **official** "Download on the
 App Store" badge artwork (Apple Marketing Tools; English badge on EN pages, Japanese badge on JA pages),
 saved under `assets/img/`, wrapped in `<a href="https://apps.apple.com/app/id…">`. Do not recolour or
 restyle the badge. Never add a store link before the app is live.
@@ -59,5 +64,5 @@ grep -rn "{{" --include='*.html' . | grep -v _templates   # must print nothing
 ```
 
 - Look at the page at desktop width and at 390px, in light and dark mode.
-- Older apps (Dry Days, 血圧手帳 …) stay listed in the home-page footer under "Other apps".
+- Older apps (Dry Days, 血圧手帳 …) stay listed on `older/` and `ja/older/`.
 - Commit locally. The owner pushes.
